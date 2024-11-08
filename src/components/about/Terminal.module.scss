@@ -1,0 +1,66 @@
+@import "../../variables.modules";
+
+i {
+  padding-left: 0.5rem;
+
+  &.red {
+    color: $red;
+  }
+
+  &.amber {
+    color: $yellow;
+  }
+
+  &.green {
+    color: $green;
+  }
+}
+
+.terminal {
+  p, li {
+    margin: 1rem 0;
+    color: $white;
+  }
+
+  a, a:visited {
+    animation: changeColors 3s infinite;
+    font-weight: bold;
+  }
+}
+
+@keyframes changeColors {
+  0% {
+    color: #00a47f;
+  }
+  33.3% {
+    color: #1d91e3;
+  }
+  66.6% {
+    color: #d419fe;
+  }
+  100% {
+    color: #00a47f;
+  }
+}
+
+
+@keyframes comeUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.terminal-block {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.terminal-block.visible {
+  opacity: 1;
+  animation: comeUp 0.6s forwards;
+}
